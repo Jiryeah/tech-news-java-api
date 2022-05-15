@@ -52,13 +52,10 @@ public class Vote implements Serializable {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (!(o instanceof Vote)) return false;
         Vote vote = (Vote) o;
-        return Objects.equals(getId(), vote.getId()) &&
-                Objects.equals(getUserId(), vote.getUserId()) &&
-                Objects.equals(getPostId(), vote.getPostId());
+        return Objects.equals(getId(), vote.getId()) && Objects.equals(getUserId(), vote.getUserId()) && Objects.equals(getPostId(), vote.getPostId());
     }
-
 
     @Override
     public int hashCode() {
@@ -74,3 +71,4 @@ public class Vote implements Serializable {
                 '}';
     }
 }
+
