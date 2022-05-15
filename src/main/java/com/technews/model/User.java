@@ -4,8 +4,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.List;
 import java.util.Objects;
+import java.util.List;
 
 @Entity
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
@@ -34,6 +34,7 @@ public class User implements Serializable {
     private List<Comment> comments;
 
     public User() {
+
     }
 
     public User(Integer id, String username, String email, String password) {
@@ -111,7 +112,7 @@ public class User implements Serializable {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof User)) return false;
+        if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
         return isLoggedIn() == user.isLoggedIn() &&
                 Objects.equals(getId(), user.getId()) &&
@@ -122,11 +123,11 @@ public class User implements Serializable {
                 Objects.equals(getVotes(), user.getVotes()) &&
                 Objects.equals(getComments(), user.getComments());
     }
-
     @Override
     public int hashCode() {
         return Objects.hash(getId(), getUsername(), getEmail(), getPassword(), isLoggedIn(), getPosts(), getVotes(), getComments());
     }
+
 
     @Override
     public String toString() {
