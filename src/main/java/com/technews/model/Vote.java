@@ -58,6 +58,8 @@ public class Vote implements Serializable {
                 Objects.equals(getUserId(), vote.getUserId()) &&
                 Objects.equals(getPostId(), vote.getPostId());
     }
+
+
     @Override
     public int hashCode() {
         return Objects.hash(getId(), getUserId(), getPostId());
