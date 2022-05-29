@@ -13,5 +13,13 @@ const upvoteClickHandler = async (event) => {
         headers: {
             'Content-Type': 'application/json'
         }
-    })
+    });
+
+    if (response.ok) {
+        document.location.reload();
+    } else {
+        alert(response.statusText);
+    }
 }
+
+document.querySelector('.upvote-btn').addEventListener('click', upvoteClickHandler);
