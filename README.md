@@ -9,7 +9,7 @@
 
 # Summary
 
-This is a CMS-style blog site similar to a Wordpress site, where developers can publish their blog posts and comment on other developers’ posts as well. However, new MVC technologies were used to create the given goal. 
+This is a CMS-style blog site that utilizes the Spring Framework to create a robust Backend/API while using ThymeLeaf as the template engine for the view.
 
 # User Story
 
